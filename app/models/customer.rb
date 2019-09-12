@@ -9,13 +9,11 @@ class Customer < ApplicationRecord
   scope :blocked, -> { where(blacklisted: true) }
 
   def to_blacklist!
-    self.blacklisted = true
-    save
+    update!(blacklisted: true)
   end
 
   def blacklist_off!
-    self.blacklisted = false
-    save
+    update!(blacklisted: true)
   end
 
   def black?
