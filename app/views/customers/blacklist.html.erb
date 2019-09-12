@@ -1,0 +1,48 @@
+<p id="alert"><%= alert %></p>
+<p id="notice"><%= notice %></p>
+
+<div class="text-center">
+  <h2>Members of Blacklist</h2>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mb-3">
+      <%= form_for '', url: search_path, role: 'search', html: { class: 'form-inline' },
+            method: :get do %>
+        <%= text_field_tag :phone,
+              params[:phone],
+              placeholder: "Enter phone",
+              class: 'form-control'
+        %>
+        <%= button_tag 'Add to blacklist', name: nil, class: 'btn btn-primary ml-3' %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class=col-md-8>
+      <div class="buffer-top">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Description</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+          </thead>
+          <tbody>
+            <%= render partial: 'customers/customer', collection: @black_customers %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class=col-md-4>
+      <div class="buffer-top">
+        <%= link_to 'To the Main Page', root_path, class: 'btn btn-link' %>
+      </div>
+    </div>
+  </div>
+</div>

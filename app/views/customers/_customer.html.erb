@@ -1,0 +1,23 @@
+<tr>
+  <td><%= customer.name %></td>
+  <td><%= customer.phone %></td>
+  <td><%= customer.description %></td>
+  <td>
+    <%= link_to content_tag('span', 'Edit customer', class: 'btn btn-primary'), edit_customer_path(customer), class: 'action' %>
+  </td>
+  <td>
+    <% if customer.black? %>
+      <%= link_to 'Drop from black',
+            customer_do_white_path(customer),
+            method: :post,
+            class: 'btn btn-success'
+      %>
+    <% else %>
+      <%= link_to 'To blacklist',
+            customer_do_black_path(customer),
+            method: :post,
+            class: 'btn btn-danger'
+      %>
+    <% end %>
+  </td>
+</tr>

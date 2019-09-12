@@ -1,0 +1,42 @@
+<div class="col-md-8">
+  <%= simple_form_for(@customer) do |f| %>
+    <%= render partial: 'partials/form_errors', locals: {model: @customer} %>
+
+    <div class="container">
+      <div class="row">
+        <div class="form-group col-xs-4">
+          <p><%= f.label :name, 'Название', class: 'form-label' %></p>
+          <p><%= f.text_field :name, class: 'form-control', required: true %></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xs-4">
+          <p><%= f.label :phone, 'Описаниe', class: 'form-label' %></p>
+          <p><%= f.text_field :phone, class: 'form-control', required: true %></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xs-4">
+          <p><%= f.label :description, 'Описаниe', class: 'form-label' %></p>
+          <p><%= f.text_field :description, class: 'form-control', required: true %></p>
+        </div>
+      </div>
+
+      <div class="form-group col-auto my-1">
+        <div class="custom-control custom-checkbox mr-sm-2">
+          <div class="field">
+            <%= f.input :blacklisted %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-xs-4">
+          <p><%= f.submit 'Save', class: 'btn btn-info' %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<center><h2>Clients</h2></center>
+
+<div class="container">
+  <div class="row">
+    <div class=col-md-10>
+      <div class="buffer-top">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Description</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+          </thead>
+          <tbody>
+            <%= render partial: 'customers/customer', collection: @customers %>
+          </tbody>
+          </table>
+      </div>
+    </div>
+
+    <div class=col-md-2>
+      <div class="buffer-top">
+        <%= link_to 'To the Blacklist', blacklist_path, class: 'btn btn-link' %>
+      </div>
+    </div>
+  </div>
+</div>
