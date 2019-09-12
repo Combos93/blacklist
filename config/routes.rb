@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :customers, except: [:create, :new, :destroy] do
+    post :do_white
+    post :do_black
+  end
+
+  root to: 'customers#index'
+
+  get 'blacklist', to: 'customers#blacklist'
+  get '/search', to: 'customers#search'
 end
