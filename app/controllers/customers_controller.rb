@@ -1,6 +1,5 @@
 class CustomersController < ApplicationController
   before_action :set_customer, except: %i[index blacklist search]
-  before_action :black_customers, only: %i[index blacklist]
 
   def index
     @customers = Customer.available

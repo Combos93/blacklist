@@ -6,7 +6,7 @@ class Customer < ApplicationRecord
   validates :phone, uniqueness: true
 
   scope :available, -> { where(blacklisted: false) }
-  scope :blocked, -> { where(blacklisted: true }
+  scope :blocked, -> { where(blacklisted: true) }
 
   def to_blacklist!
     self.blacklisted = true
