@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :customers, except: [:create, :new, :destroy] do
-    post :do_white
-    post :do_black
+    post :do_white, on: :member
+    post :do_black, on: :member
   end
 
   root to: 'customers#index'
