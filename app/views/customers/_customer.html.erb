@@ -8,13 +8,13 @@
   <td>
     <% if customer.black? %>
       <%= link_to 'Drop from black',
-            customer_do_white_path(customer),
+            do_white_customer_path(customer),
             method: :post,
             class: 'btn btn-success'
       %>
     <% else %>
       <%= link_to 'To blacklist',
-            customer_do_black_path(customer),
+            do_black_customer_path(customer),
             method: :post,
             class: 'btn btn-danger'
       %>
